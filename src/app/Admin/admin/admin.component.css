@@ -1,0 +1,7 @@
+.logo{
+    /* background-image:url("src/assets/img/logo.jpg") ; */
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}

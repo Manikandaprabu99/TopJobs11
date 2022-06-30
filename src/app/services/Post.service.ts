@@ -19,22 +19,22 @@ export class PostService{
     api_Url = environment.api_Url;
 
     getAllPosts(): Observable<Post[]> {
-      return this.http.get<Post[]>(this.api_Url + 'api/post/');
+      return this.http.get<Post[]>(this.api_Url + 'api/Api/');
   }
 
     getPostById(id: string): Observable<Post>{
-      return this.http.get<Post>(this.api_Url + 'api/post/' + id);
+      return this.http.get<Post>(this.api_Url + 'api/Api/' + id);
     }
 
     updatePost(id:string | undefined, updatePostRequest: UpdatePostRequest): Observable<Post>{
-      return this.http.put<Post>(this.api_Url + 'api/post/' + id, updatePostRequest);
+      return this.http.put<Post>(this.api_Url + 'api/Api/' + id, updatePostRequest);
     }
 
     addPost(addPostRequest: AddPostRequest):Observable<Post> {
-      return this.http.post<Post>(this.api_Url + 'api/post/' , addPostRequest);
+      return this.http.post<Post>(this.api_Url + 'api/Api/' , addPostRequest);
     }
 
     deletePost(id: string | undefined):Observable<Post> {
-      return this.http.delete<Post>(this.api_Url + 'api/post/' + id);
+      return this.http.delete<Post>(this.api_Url + 'api/Api/' + id);
     }
 }

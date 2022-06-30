@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   api_Url:"https://localhost:44327/"
 };
-
+// https://localhost:44327/api/User/CreateUser
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

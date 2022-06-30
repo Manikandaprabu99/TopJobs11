@@ -1,14 +1,73 @@
-<div class="container" *ngIf="post">
-  <div class="card" style="max-width: 200px;" >
-    <img [src]="post.featureImageUrl" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h3 class="card-title">{{ post.jobTitle }}</h3>
-      <article class="card-text">
 
-      </article>
 
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+
+  
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand mb-0 h1" href="#">TOPJOBS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home<span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Profile-Details">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Find-Jobs">FindJobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >Company Review</a>
+        </li>
+       
+  
+      </ul>
     </div>
-  </div>
-</div>
+  </nav>
+
+ 
+
+
+
+
+
+              <!-- <div class="d-flex flex-row">
+                <input [(ngModel)]="JobNameSearch" class="form-control"
+                (keyup)="SearchFn()" placeholder="JobTitle">
+            </div> -->
+           
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="posts">
+                <div class="col"  *ngFor = "let post of posts">
+                  <div class="card h-100" style="max-width: 260px;">
+
+        <img [src]="post.featureImageUrl" class="card-img-top" alt="...">
+
+        
+        <div class="card-body">
+          <h3 class="card-title" >Title:{{ post.jobTitle }}</h3>
+          <h3 class="card-title">Location:{{ post.location }}</h3>
+          
+          <article class="card-text">Summary:
+            {{ post.summary }}
+          </article>
+    <br>
+    
+          <a class="btn btn-primary" [routerLink]="['/apply-job',post.id]">Apply</a>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+    
+    

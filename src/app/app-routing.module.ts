@@ -10,6 +10,10 @@ import { PostJobsComponent } from './post-jobs/post-jobs.component';
 import { AdminPostsComponent } from './Admin/admin-posts/admin-posts.component';
 import { AdminViewPostComponent } from './Admin/admin-view-post/admin-view-post.component';
 import { AdminAddPostComponent } from './Admin/admin-add-post/admin-add-post.component';
+import { ApplyJobComponent } from './apply-job/apply-job.component';
+import { EmpnavBarComponent } from './empnav-bar/empnav-bar.component';
+import { AdminComponent } from './Admin/admin/admin.component';
+import { EmployerComponent } from './employer/employer.component';
 
 
 
@@ -25,7 +29,11 @@ const routes: Routes = [
   {path: 'post-jobs',component:PostJobsComponent},
   {path:'Admin/posts',component: AdminPostsComponent},
   {path:'Admin/posts/add',component:AdminAddPostComponent},
-  {path:'admin/posts/:id',component:AdminViewPostComponent}
+  {path:'admin/posts/:id',component:AdminViewPostComponent},
+  {path:'apply-job/:id',component:ApplyJobComponent},
+  {path:'empnav-bar',component:EmpnavBarComponent},
+  {path:'admin',component:AdminComponent},
+  {path:'employer',component:EmployerComponent}
  
 ];
 
@@ -35,4 +43,4 @@ const routes: Routes = [
 
 })
 export class AppRoutingModule { }
-export const routingcomponents = [NavBarComponent,LoginComponent,SignupComponent,ProfileDetailsComponent,FindJobsComponent,HomeComponent,PostJobsComponent,AdminPostsComponent,AdminViewPostComponent,AdminAddPostComponent]
+export const routingcomponents = [NavBarComponent,LoginComponent,SignupComponent,ProfileDetailsComponent,FindJobsComponent,HomeComponent,PostJobsComponent,AdminPostsComponent,AdminViewPostComponent,AdminAddPostComponent,ApplyJobComponent,EmpnavBarComponent,AdminComponent,EmployerComponent]

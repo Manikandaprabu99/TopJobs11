@@ -15,8 +15,12 @@ import { CompanyReviewComponent } from './company-review/company-review.componen
 import { PostJobsComponent } from './post-jobs/post-jobs.component';
 import { HomeComponent } from './home/home.component';
 import { AdminViewPostComponent } from './Admin/admin-view-post/admin-view-post.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminAddPostComponent } from './Admin/admin-add-post/admin-add-post.component';
+import { ApplyJobComponent } from './apply-job/apply-job.component';
+import { EmpnavBarComponent } from './empnav-bar/empnav-bar.component';
+import { AdminComponent } from './Admin/admin/admin.component';
+import { EmployerComponent } from './employer/employer.component';
 
 
 
@@ -32,7 +36,11 @@ import { AdminAddPostComponent } from './Admin/admin-add-post/admin-add-post.com
     PostJobsComponent,
     HomeComponent,
     AdminViewPostComponent,
-    AdminAddPostComponent
+    AdminAddPostComponent,
+    ApplyJobComponent,
+    EmpnavBarComponent,
+    AdminComponent,
+    EmployerComponent
     
     
   ],
@@ -45,7 +53,8 @@ import { AdminAddPostComponent } from './Admin/admin-add-post/admin-add-post.com
     MatIconModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
    
 
