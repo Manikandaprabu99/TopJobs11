@@ -28,7 +28,81 @@ import { environment } from "src/environments/environment";
         responseType: 'text',
     });
     }
-  }
+
+    
+    EmployerRegister(user: Array<string| null | undefined>){
+      return  this.http.post(this.api_Url + "api/Api/Employer",
+      {
+        FirstName: user[0],
+        CompanyName: user[1],
+        Email: user[2],
+        Mobile: user[3],
+        Gender: user[4],
+        Pwd: user[5]
+      }, {
+        responseType: 'text',
+    });
+    }
 
 
+
+
+    // loginUser(email:any ,pwd:any){
+    //   return   this.http.post(this.api_Url + "api/Api/LoginUser/"+ email +','+ pwd,email,pwd);
+    //   }
+
+    loginUser(loginInfo: Array<string |null| undefined>){
+      return this.http.post(
+        this.api_Url + "api/Api/LoginUser/",
+        {
+        Email:loginInfo[0],
+        Pwd:loginInfo[1],
+      },
+        {
+          responseType:'text',
+        }
+        );
+      }
+
+
+      EmployerLogin(loginInfo: Array<string |null| undefined>){
+        return this.http.post(
+          this.api_Url + "api/Api/EmployerLogin",
+          {
+          Email:loginInfo[0],
+          Pwd:loginInfo[1],
+        },
+          {
+            responseType:'text',
+          }
+          );
+        }
+
+
+
+        AdminLogin(loginInfo: Array<string |null| undefined>){
+          return this.http.post(
+            this.api_Url + "api/Api/AdminLogin",
+            {
+            Email:loginInfo[0],
+            Pwd:loginInfo[1],
+          },
+            {
+              responseType:'text',
+            }
+            );
+          }
+
+
+      
+
+
+
+
+
+
+
+    }
+
+  
 

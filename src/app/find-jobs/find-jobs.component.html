@@ -18,19 +18,20 @@
           <a class="nav-link" routerLink="/Profile-Details">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Find-Jobs">FindJobs</a>
+          <a class="nav-link" routerLink="/Find-Jobs">Browse Jobs</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" >Company Review</a>
-        </li>
+        </li> -->
        
   
       </ul>
     </div>
   </nav>
-
- 
-
+  <div class="d-flex flex-row">
+ <input class="form-control" type="text" name="jobTitle" [(ngModel)]="jobTitle" (mgModelChange)="Search()"
+ placeholder="Enter the job Title">
+  </div>
 
 
 

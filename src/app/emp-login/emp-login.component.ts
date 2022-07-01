@@ -3,15 +3,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-emp-login',
+  templateUrl: './emp-login.component.html',
+  styleUrls: ['./emp-login.component.css']
 })
-export class LoginComponent implements OnInit {
-  
- 
+export class EmpLoginComponent implements OnInit {
 
   constructor(private authService:AuthService,private router:Router){}
 
@@ -28,13 +25,13 @@ export class LoginComponent implements OnInit {
   });
 
   loginSubmitted(){
-    this.authService.loginUser(
+    this.authService.EmployerLogin(
      [this.loginForm.value.email,
       this.loginForm.value.pwd]).subscribe(res=> {
       
       
         alert("login Successful");
-        this.router.navigate(["/Find-Jobs"]);
+        this.router.navigate(["/post-jobs"]);
        });
   }
 

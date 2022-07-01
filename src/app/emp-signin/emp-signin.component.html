@@ -1,50 +1,21 @@
-
-
-
-  
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand mb-0 h1" href="#">TOPJOBS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="">Home<span class="sr-only"></span></a>
-        </li>
+       
+      
         <li class="nav-item">
-          <a class="nav-link" routerLink="/Profile-Details">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/Find-Jobs">Browse Jobs</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" >Company Review</a>
-        </li> -->
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/empnav-bar">
-              Employers / Post Job</a>
-          </li>
-        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/post-jobs">Post Job</a>
-        </li> -->
-  
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" >view Applicants</a>
+        </li>
       </ul>
     </div>
   </nav>
-
- 
-
-
-
-
-
-
-
-
-
 
 <div class="container">
     <p class="text-center fs-3" [ngClass]="isAccountCreated ? 'text-success pb-1':  'text-danger pb-1' ">{{displayMsg}}</p>
@@ -70,15 +41,15 @@
                 </div>
             </div>
             <div class="col mb-3">
-                <label for="lastame" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lastname" formControlName="lastname">
-                <div class="form-text text-danger" *ngIf="LastName.errors?.['required'] && (LastName.dirty || LastName.touched)">Last Name is Required.</div>
+                <label for="lastame" class="form-label">Company Name</label>
+                <input type="text" class="form-control" id="companyname" formControlName="companyname">
+                <div class="form-text text-danger" *ngIf="CompanyName.errors?.['required'] && (CompanyName.dirty || CompanyName.touched)">Company Name is Required.</div>
 
-                <div class="form text text-danger" *ngIf="LastName.errors?.['minlength'] && (LastName.dirty|| LastName.touched)">
-                    Last Name is too short
+                <div class="form text text-danger" *ngIf="CompanyName.errors?.['minlength'] && (CompanyName.dirty|| CompanyName.touched)">
+                    Company Name is too short
                 </div>
-                <div class="form text text-danger" *ngIf="LastName.errors?.['pattern'] && (LastName.dirty || LastName.touched)">
-                    LastName Should Start with Alphabet
+                <div class="form text text-danger" *ngIf="CompanyName.errors?.['pattern'] && (CompanyName.dirty || CompanyName.touched)">
+                    Company Name Should Start with Alphabet
                 </div>
             </div>
         </div>

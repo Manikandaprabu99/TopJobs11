@@ -20,7 +20,10 @@ import { AdminAddPostComponent } from './Admin/admin-add-post/admin-add-post.com
 import { ApplyJobComponent } from './apply-job/apply-job.component';
 import { EmpnavBarComponent } from './empnav-bar/empnav-bar.component';
 import { AdminComponent } from './Admin/admin/admin.component';
-import { EmployerComponent } from './employer/employer.component';
+import { EmpLoginComponent } from './emp-login/emp-login.component';
+import { EmpSigninComponent } from './emp-signin/emp-signin.component';
+import { AdminLoginComponent } from './Admin/admin-login/admin-login.component';
+
 
 
 
@@ -40,7 +43,10 @@ import { EmployerComponent } from './employer/employer.component';
     ApplyJobComponent,
     EmpnavBarComponent,
     AdminComponent,
-    EmployerComponent
+    EmpLoginComponent,
+    EmpSigninComponent,
+    AdminLoginComponent
+    
     
     
   ],

@@ -1,17 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
-
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-admin-login',
+  templateUrl: './admin-login.component.html',
+  styleUrls: ['./admin-login.component.css']
 })
-export class LoginComponent implements OnInit {
-  
- 
+export class AdminLoginComponent implements OnInit {
 
   constructor(private authService:AuthService,private router:Router){}
 
@@ -28,13 +25,13 @@ export class LoginComponent implements OnInit {
   });
 
   loginSubmitted(){
-    this.authService.loginUser(
+    this.authService.AdminLogin(
      [this.loginForm.value.email,
       this.loginForm.value.pwd]).subscribe(res=> {
       
       
         alert("login Successful");
-        this.router.navigate(["/Find-Jobs"]);
+        this.router.navigate(["/Admin/posts"]);
        });
   }
 

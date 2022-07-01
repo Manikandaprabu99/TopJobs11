@@ -13,13 +13,13 @@ export class FindJobsComponent implements OnInit {
 
   constructor(private postService:PostService) { }
 
-
+  jobTitle: string =" ";
+  
   posts : Post[] = [];
   
   nextposts: string = "";
 
-  JobNameSearch:string="";
-  JobListWithoutSearch:any=[];
+  
 
 
   ngOnInit(): void {
@@ -31,37 +31,16 @@ export class FindJobsComponent implements OnInit {
   );
   }
 
-//  SearchFn(){
-//     var JobNameSearch=this.JobNameSearch;
+
+  Search(){
+    if(this.jobTitle == ""){
+      this.ngOnInit();
+    }
+    else{
+      this.posts = this.posts.filter(res => {
+        return res.jobTitle.toLocaleLowerCase().match(this.jobTitle.toLocaleLowerCase());
     
-//     this.JobNameSearch = this.JobListWithoutSearch.filter(function (el:any){
-//       return el.jobTitle.toString().toLowerCase().includes(
-//         JobNameSearch.toString().trim().toLowerCase()
-//       )
-//   });
-//   }
+      });
+    }
+  }
 }
-
-
-
-
-
-
-// <div class="container" *ngIf="posts">
-//       <div *ngFor = "let post of posts" class="card h-100" style="max-width: 200px;" >
-
-//         <img [src]="post.featureImageUrl" class="card-img-top" alt="...">
-
-        
-//         <div class="card-body">
-//           <h3 class="card-title">{{ post.jobTitle }}</h3>
-//           <br>
-//           <article class="card-text">
-//             {{ post.summary }}
-//           </article>
-//     <br>
-//           <a class="btn btn-primary" [routerLink]="['/apply-job',post.id]">Apply</a>
-          
-//         </div>
-//       </div>
-//     </div>
