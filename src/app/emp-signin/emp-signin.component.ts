@@ -4,18 +4,18 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-emp-signin',
+  templateUrl: './emp-signin.component.html',
+  styleUrls: ['./emp-signin.component.css']
 })
-export class SignupComponent implements OnInit {
+export class EmpSigninComponent implements OnInit {
 
   repeatPass : string = 'none';
   displayMsg: string = '';
   isAccountCreated: boolean = false;
 
 
-    constructor(private authService: AuthService, private router:Router) { }
+    constructor(private authService: AuthService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
     Validators.minLength(4),
     Validators.pattern("[a-zA-Z].*")]),
 
-    lastname: new FormControl("",[
+    companyname: new FormControl("",[
       Validators.required,
       Validators.minLength(1),
       Validators.pattern("[a-zA-Z].*")]),
@@ -56,9 +56,9 @@ export class SignupComponent implements OnInit {
       console.log(this.registerForm.valid);
       this.repeatPass = 'none'
 
-      this.authService.registerUser([
+      this.authService.EmployerRegister([
         this.registerForm.value.firstname,
-        this.registerForm.value.lastname,
+        this.registerForm.value.companyname,
         this.registerForm.value.email,
         this.registerForm.value.mobile,
         this.registerForm.value.gender,
@@ -77,7 +77,7 @@ export class SignupComponent implements OnInit {
             this.displayMsg = "Something went wrong";
             this.isAccountCreated = false;
           }
-          this.router.navigate(["/Find-Jobs"]);
+          this.router.navigate(["/post-jobs"]);
         }
       );
     }
@@ -91,8 +91,8 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('firstname') as FormControl;
   }
 
-  get LastName(): FormControl{
-    return this.registerForm.get('lastname') as FormControl;
+  get CompanyName(): FormControl{
+    return this.registerForm.get('companyname') as FormControl;
   }
 
   get Email(): FormControl{
@@ -114,3 +114,5 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('rpwd') as FormControl;
   }
 }
+
+
